@@ -3,6 +3,7 @@ defmodule Solution do
   def unhappy_friends(n, preferences, pairs) do
     preference_map =
       List.foldl(preferences |> Enum.with_index(), %{}, fn {x, u}, acc ->
+        # The order of merge does not matter since the implementation of `Map.merge` always merges the smaller into the larger.
         Map.merge(acc, for({v, i} <- x |> Enum.with_index(), into: %{}, do: {{u, v}, n - i}))
       end)
 
