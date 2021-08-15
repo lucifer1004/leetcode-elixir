@@ -14,6 +14,16 @@ defmodule Solution do
       else: find_paths(m, n, max_move, 1, 1, 0, %{{start_row + 1, start_column + 1, 0} => 1}, 0)
   end
 
+  @spec find_paths(
+          m :: integer,
+          n :: integer,
+          max_move :: integer,
+          row :: integer,
+          column :: integer,
+          move :: integer,
+          mp :: map(),
+          ans :: integer
+        ) :: integer
   def find_paths(m, n, max_move, row, column, move, mp, ans) do
     now = Map.get(mp, {row, column, move}, 0)
 
