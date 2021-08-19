@@ -4,7 +4,7 @@ defmodule Solution do
     reverse_arr(s |> String.graphemes(), k) |> Enum.join("")
   end
 
-  @spec reverse_arr(arr :: arg, k :: integer) :: [arg] when arg: var
+  @spec reverse_arr(arr :: [arg], k :: integer) :: [arg] when arg: var
   defp reverse_arr(arr, k) do
     case arr do
       [] ->
